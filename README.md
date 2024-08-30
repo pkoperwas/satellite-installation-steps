@@ -7,3 +7,5 @@ A unique host name, which can contain lower-case letters, numbers, dots (.) and 
 A current Red Hat Satellite subscription
 Administrative user (root) access
 Full forward and reverse DNS resolution using a fully-qualified domain name
+SELinux mode
+SELinux must be enabled, either in enforcing or permissive mode. Installation with disabled SELinux is not supported.
