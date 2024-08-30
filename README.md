@@ -40,3 +40,6 @@ Not Applicable
 1 MB
 
 300 GB
+
+
+If you mount the /tmp directory as a separate file system, you must use the exec mount option in the /etc/fstab file. If /tmp is already mounted with the noexec option, you must change the option to exec and re-mount the file system. This is a requirement for the puppetserver service to work.
