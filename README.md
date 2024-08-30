@@ -9,3 +9,34 @@ Administrative user (root) access
 Full forward and reverse DNS resolution using a fully-qualified domain name
 SELinux mode
 SELinux must be enabled, either in enforcing or permissive mode. Installation with disabled SELinux is not supported.
+Table 1.1. Storage requirements for a Satellite Server installation
+Directory	Installation Size	Runtime Size
+/var/log
+
+10 MB
+
+10 GB
+
+/var/lib/pgsql
+
+100 MB
+
+20 GB
+
+/usr
+
+10 GB
+
+Not Applicable
+
+/opt/puppetlabs
+
+500 MB
+
+Not Applicable
+
+/var/lib/pulp
+
+1 MB
+
+300 GB
