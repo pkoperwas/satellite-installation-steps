@@ -3,20 +3,20 @@
 
 More info you can find here: https://docs.redhat.com/en/documentation/red_hat_satellite/6.15/html/installing_satellite_server_in_a_disconnected_network_environment/index 
 
-* OS: Red Hat Enterprise Linux 8 (RHEL9 is still not supported)
-* 4-core CPU
-* 20 GB RAM 
-* 4 GB RAM 
-* A unique host name, which can contain lower-case letters, numbers, dots (.) and hyphens (-)
-* A current Red Hat Satellite subscription
-* Full forward and reverse DNS resolution using a fully-qualified domain name
-* SELinux must be enabled, either in enforcing or permissive mode. Installation with disabled SELinux is not supported.
-* /var/lib/pgsql installation size 100MB, up to 20GB
-* /opt/puppetlabs installation size 500MB
-* /var/lib/pulp installation size 1MB up to 300GB
-* /var/log  installation size 10MB up to 10GB
-* /usr installation size 10GB    
-* If /tmp is a separate file system, you must use the exec mount option in the /etc/fstab file.
+- OS: Red Hat Enterprise Linux 8 (RHEL9 is still not supported)
+- 4-core CPU
+- 20 GB RAM 
+- 4 GB RAM 
+- A unique host name, which can contain lower-case letters, numbers, dots (.) and hyphens (-)
+- A current Red Hat Satellite subscription
+- Full forward and reverse DNS resolution using a fully-qualified domain name
+- SELinux must be enabled, either in enforcing or permissive mode. Installation with disabled SELinux is not supported.
+- /var/lib/pgsql installation size 100MB, up to 20GB
+- /opt/puppetlabs installation size 500MB
+- /var/lib/pulp installation size 1MB up to 300GB
+- /var/log  installation size 10MB up to 10GB
+- /usr installation size 10GB    
+- If /tmp is a separate file system, you must use the exec mount option in the /etc/fstab file.
 
 **Mount ISO files**
 ```
