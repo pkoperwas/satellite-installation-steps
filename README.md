@@ -1,7 +1,5 @@
 # Red Hat Satellite 6 - "disconnected network" installation steps 
 
-#
-
 
 More info you can find here: https://docs.redhat.com/en/documentation/red_hat_satellite/6.15/html/installing_satellite_server_in_a_disconnected_network_environment/index 
 
@@ -20,17 +18,23 @@ More info you can find here: https://docs.redhat.com/en/documentation/red_hat_sa
 * /usr installation size 10GB    
 * If /tmp is a separate file system, you must use the exec mount option in the /etc/fstab file.
 
+**Mount ISO files**
+```
+mount -o loop rhel-8.10-x86_64-dvd.iso /mnt/rhel8
+mount -o loop Satellite-6.15.3-rhel-8-x86_64.dvd.iso /mnt/satellite6
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+```
 
- mount -o loop rhel8-DVD.iso /media/rhel8
-# cp /media/rhel8/media.repo /etc/yum.repos.d/rhel8.repo
-# chmod u+w /etc/yum.repos.d/rhel8.repo
+**Create RHEL8 Repo from ISO file**
+/etc/yum.repos.d/rhel8.repo
+```
 [RHEL8-BaseOS]
 name=Red Hat Enterprise Linux BaseOS
 mediaid=None
 metadata_expire=-1
 gpgcheck=0
 cost=500
-baseurl=file:///media/rhel8/BaseOS/
+baseurl=file:///mnt/rhel8/BaseOS/
 
 [RHEL8-AppStream]
 name=Red Hat Enterprise Linux Appstream
@@ -38,60 +42,15 @@ mediaid=None
 metadata_expire=-1
 gpgcheck=0
 cost=500
-baseurl=file:///media/rhel8/AppStream/
-
-# mkdir /media/sat6
-# mount -o loop sat6-DVD.iso /media/sat6
-rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
- cd /media/sat6/
- # ./install_packages
+baseurl=file:///mnt/rhel8/AppStream/
+```
 
 
+**Install Satellite packages**
+```
+ cd /mnt/satellite6
+ ./install_packages
+```
 
- root@satellite [ /media/sat6 ]# ./install_packages 
-This script will install the satellite packages on the current machine.
-   - Ensuring we are in an expected directory.
-   - Copying installation files.
-   - Creating Satellite Repository File
-   - Creating Maintenance Repository File
-   - Checking to see if Satellite is already installed.
-   - Importing the gpg key.
-Error: Problems in request:
-Modular dependency problems:
 
- Problem: conflicting requests
-  - nothing provides module(pki-core) needed by module satellite:el8:61520240814200641:0975698b.x86_64 from Satellite-local
-  - nothing provides module(platform:el8) needed by module satellite:el8:61520240814200641:0975698b.x86_64 from Satellite-local
-  - nothing provides module(postgresql:12) needed by module satellite:el8:61520240814200641:0975698b.x86_64 from Satellite-local
-  - nothing provides module(ruby:2.7) needed by module satellite:el8:61520240814200641:0975698b.x86_64 from Satellite-local
-Error while executing command: 'dnf module enable -y satellite:el8'
-root@satellite [ /media/sat6 ]# dnf module reset postgresql
-Updating Subscription Management repositories.
-Last metadata expiration check: 0:06:20 ago on Sat 31 Aug 2024 01:11:42 AM CEST.
-Dependencies resolved.
-Nothing to do.
-Complete!
-root@satellite [ /media/sat6 ]# dnf module reset pki-core
-Updating Subscription Management repositories.
-Last metadata expiration check: 0:06:29 ago on Sat 31 Aug 2024 01:11:42 AM CEST.
-Unable to resolve argument pki-core
-Error: Problems in request:
-missing groups or modules: pki-core
-root@satellite [ /media/sat6 ]# dnf module reset postgresql
-Updating Subscription Management repositories.
-Last metadata expiration check: 0:06:42 ago on Sat 31 Aug 2024 01:11:42 AM CEST.
-Dependencies resolved.
-Nothing to do.
-Complete!
-root@satellite [ /media/sat6 ]# dnf module reset ruby
-Updating Subscription Management repositories.
-Last metadata expiration check: 0:06:51 ago on Sat 31 Aug 2024 01:11:42 AM CEST.
-Dependencies resolved.
-Nothing to do.
-Complete!
-root@satellite [ /media/sat6 ]# dnf module reset platform
-Updating Subscription Management repositories.
-Last metadata expiration check: 0:06:58 ago on Sat 31 Aug 2024 01:11:42 AM CEST.
-Unable to resolve argument platform
-Error: Problems in request:
-missing groups or modules: platform
+
