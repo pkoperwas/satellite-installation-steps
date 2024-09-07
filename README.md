@@ -1,4 +1,4 @@
-# Red Hat Satellite 6 - "disconnected network method" installation steps 
+# Red Hat Satellite 6 - "disconnected network" installation steps 
 
 #
 
