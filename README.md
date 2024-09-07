@@ -14,8 +14,11 @@ More info you can find here: https://docs.redhat.com/en/documentation/red_hat_sa
 * Full forward and reverse DNS resolution using a fully-qualified domain name
 * SELinux must be enabled, either in enforcing or permissive mode. Installation with disabled SELinux is not supported.
 * Storage requirements for a Satellite Server installation
-
-
+** /var/lib/pgsql installation size 100MB, up to 20GB
+** /opt/puppetlabs installation size 500MB
+** /var/lib/pulp installation size 1MB up to 300GB
+** /var/log  installation size 10MB up to 10GB
+** /usr installation size 10GB    
 
 If you mount the /tmp directory as a separate file system, you must use the exec mount option in the /etc/fstab file. If /tmp is already mounted with the noexec option, you must change the option to exec and re-mount the file system. This is a requirement for the puppetserver service to work.
 
