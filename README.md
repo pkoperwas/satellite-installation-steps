@@ -59,4 +59,7 @@ firewall-cmd --add-service=dns --add-service=dhcp --add-service=tftp --add-servi
 firewall-cmd --runtime-to-permanent
 ```
 
-
+**Install/Configure Satellite**
+```
+satellite-installer --scenario satellite --foreman-initial-organization "koperwas.local" --foreman-initial-location "Poland" --foreman-initial-admin-username admin --foreman-initial-admin-password changeme
+```
