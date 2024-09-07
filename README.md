@@ -52,5 +52,11 @@ baseurl=file:///mnt/rhel8/AppStream/
  ./install_packages
 ```
 
+**Enabling connections from clients to Satellite**
+```
+firewall-cmd --add-port="5647/tcp" --add-port="8000/tcp" --add-port="9090/tcp"
+firewall-cmd --add-service=dns --add-service=dhcp --add-service=tftp --add-service=http --add-service=https --add-service=puppetmaster
+firewall-cmd --runtime-to-permanent
+```
 
 
