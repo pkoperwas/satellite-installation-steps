@@ -18,11 +18,11 @@ More info you can find here: https://docs.redhat.com/en/documentation/red_hat_sa
 * /var/lib/pulp installation size 1MB up to 300GB
 * /var/log  installation size 10MB up to 10GB
 * /usr installation size 10GB    
-* If /tmp directory as a separate file system, you must use the exec mount option in the /etc/fstab file.
+* If /tmp is a separate file system, you must use the exec mount option in the /etc/fstab file.
 
 
  mount -o loop rhel8-DVD.iso /media/rhel8
- # cp /media/rhel8/media.repo /etc/yum.repos.d/rhel8.repo
+# cp /media/rhel8/media.repo /etc/yum.repos.d/rhel8.repo
 # chmod u+w /etc/yum.repos.d/rhel8.repo
 [RHEL8-BaseOS]
 name=Red Hat Enterprise Linux BaseOS
