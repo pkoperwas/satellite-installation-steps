@@ -19,6 +19,10 @@ https://docs.redhat.com/en/documentation/red_hat_satellite/6.15/html/installing_
 - /usr installation size 10GB    
 - If /tmp is a separate file system, you must use the exec mount option in the /etc/fstab file.
 
+**Download ISO Files from Red Hat Customer portal**
+- rhel-8.10-x86_64-dvd.iso
+- Satellite-6.15.3-rhel-8-x86_64.dvd.iso
+
 **Mount ISO files**
 ```
 mount -o loop rhel-8.10-x86_64-dvd.iso /mnt/rhel8
