@@ -7,7 +7,7 @@ https://docs.redhat.com/en/documentation/red_hat_satellite/6.15/html/installing_
 - OS: Red Hat Enterprise Linux 8 (RHEL9 is still not supported)
 - 4-core CPU (you can reduce to 2-core after installation in case of LAB envorinment)
 - 20 GB RAM (you can reduce to 6GB after installation in case of LAB envorinment)
-- 4 GB SWAP
+- 6 GB SWAP
 - A unique host name, which can contain lower-case letters, numbers, dots (.) and hyphens (-)
 - A current Red Hat Satellite subscription
 - Full forward and reverse DNS resolution using a fully-qualified domain name
